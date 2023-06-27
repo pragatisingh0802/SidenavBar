@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600|Open+Sans:600&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+}
+div.content {
+  margin-left: 250px;
+  padding: 1px 1px;
+  height: 1000px;
+  overflow:hidden;
+}
+.sidebar{
+  position: fixed;
+  width: 250px;
+  left: 0px;
+  height: 100%;
+  top:0;
+  z-index: 1;
+  background: #7DA2A9;
+  transition: all .5s ease;
+  margin: 0;
+  padding: 0;
+}
+.sidebar header{
+  font-size: 28px;
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  background: #0a4b58;
+  user-select: none;
+  font-family: 'Montserrat', sans-serif;
+}
+.sidebar a{
+  display: block;
+  height: 65px;
+  width: 100%;
+  color: white;
+  line-height: 65px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+  border-left: 5px solid transparent;
+  font-family: 'Open Sans', sans-serif;
+  transition: all .5s ease;
+}
+a.active,a:hover{
+  border-left: 5px solid #0a4b58;
+  color: #0a4b58;
+}
+
+.sidebar a i{
+  font-size: 23px;
+  margin-right: 16px;
+}
+.sidebar a span{
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+#check{
+  display: none;
+}
+label #btn,label #cancel{
+  position: absolute;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid #7DA2A9;
+  margin: 15px 30px;
+  font-size: 29px;
+  background: #7DA2A9;
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  line-height: 45px;
+  transition: all .5s ease;
+}
+label #cancel{
+  opacity: 0;
+  visibility: hidden;
+}
+#check:checked ~ .sidebar{
+  left: 0;
+}
+#check:checked ~ label #btn{
+  margin-left: 245px;
+  opacity: 0;
+  visibility: hidden;
+}
+#check:checked ~ label #cancel{
+  margin-left: 245px;
+  opacity: 1;
+  visibility: visible;
+}
+@media(max-width : 860px){
+  .sidebar{
+    height: auto;
+    width: 70px;
+    left: 0;
+    margin: 100px 0;
+  }
+  div.content {
+    margin-left: 0px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  header,#btn,#cancel{
+    display: none;
+  }
+  span{
+    position: absolute;
+    margin-left: 23px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .sidebar a{
+    height: 60px;
+  }
+  .sidebar a i{
+    margin-left: -10px;
+  }
+  a:hover {
+    width: 200px;
+    background: inherit;
+  }
+  .sidebar a:hover span{
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.home-area,
+.contact-area,
+.info-area,
+.guide-area{
+    height: 100%;
+    left: 241px;
+}
+.text-content h2{
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 10%;
+    font-size: 90px;
+    margin: 0;
+    color: #fff;
+    text-shadow: 0 2px 1px #000;
+}
+.text-content {
+  text-align: center;
+  padding-top: 20%;
+  font-size: 25px;
+  margin: 0;
+  color: white;
+  /* text-shadow: 0 5px 10px #000; */
+}
+#home{
+  background: #7DA2A9;
+}
+#contact{
+  background: #0a4b58;
+}
+#information{
+  background: #7DA2A9;
+}
+#guide{
+  background: #0a4b58;
+}
+html{
+  scroll-behavior: smooth;
+}
